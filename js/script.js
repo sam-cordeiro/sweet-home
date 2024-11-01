@@ -1,13 +1,3 @@
-// Rolagem suave
-document.querySelectorAll('.nav-links a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 // Animação de Revelação ao Rolar
 let isScrolling;
 window.addEventListener('scroll', () => {
