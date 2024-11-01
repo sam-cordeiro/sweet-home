@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F5F3EB;
+    color: #4A2C2A;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(to right, #8C756A, #A38174);
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-links {
+    margin-top: 8px;
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #F5F3EB;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #C9A88A;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #F5F3EB;
+    text-decoration: none;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+
+.mask {
+    position: absolute;
+    z-index: 2;
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content h1, #p1 {
+    z-index: 3;
+    color: #F5F3EB;
+}
+
+.home {
+    font-size: 2rem;
+    color: #F5F3EB;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 1;
+}
+
+.sobre, .servicos, .contato {
+    background: #F5F3EB;
+}
+#sobre h2{
+    margin-bottom: 20px;
+}
+#sobre h2, #p2 p{
+    color: #4A2C2A;
+}
+
+.image-placeholder {
+    height: 300px;
+    margin: 1rem 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#p3{
+    margin-bottom: 20px;
+}
+
+.services-grid {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: #8C756A;
+    color: #FFF;
+    padding: 1.5rem;
+    width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card, .contact-button {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover, .contact-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#p4{
+    margin-bottom: 35px;
+    color: #4A2C2A;
+}
+
+.contact-button {
+    background: #8C756A;
+    color: #FFF;
+    padding: 0.8rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #C9A88A;
+    transform: scale(1.05);
+}
+
+/* Estilos de revelação */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Botão de menu para telas pequenas */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: #F5F3EB;
+    cursor: pointer;
+}
+
+/* Exibe o botão e oculta links na tela pequena */
+@media (max-width: 768px) {
+    nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .menu-toggle {
+        display: block;
+        margin-left: 20px;
+        margin-right: 40px;
+    }
+
+    .nav-links {
+        transition: 0.5s ease-in-out;
+        margin-top: 15px;
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        position: absolute;
+        background: #8C756A;
+        width: 100%;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 420px){
+    *{
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: 20px;
+        margin-right: 40px;
+    }
+}
